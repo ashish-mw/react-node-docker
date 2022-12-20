@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  # this is the backend
+  node-be:
+    image: docker-node:latest
+    # the backend runs on 5005 on the be container
+    ports:
+      - 5005:5005
+
+  # this is the frontend
+  react-fe:
+    image: docker-react:latest
+    # nginx runs on 80 on the be container
+    ports:
+      - 3000:80
+    # links:
+    #   - node-be
+
+
+
