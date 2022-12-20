@@ -5,12 +5,21 @@ This repo has 2 things
 - a react client app
 - an api that it consumes
 
+The expected network flow
+
+```
+http://app.com      ----------> loads react app
+http://app.com/api  ----------> loads api
+```
+
+this should be same for development and in production.
+This repo is an example project that implements this.
 
 ## Running / deployment
 
 ```
-./build_docker_images.sh
-docker-compose up
+$ ./build_docker_images.sh
+$ docker-compose up
 ```
 
 Then visit http://localhost:3000/
@@ -22,19 +31,19 @@ Open the network tab in your browser.
 ### `server`
 
 ```
-nvm use
-cd server
-npm i
-npm start
+$ nvm use
+$ cd server
+$ npm i
+$ npm start
 ```
 
 ### `client`
 
 ```
-nvm use
-cd client
-npm i
-npm run dev
+$ nvm use
+$ cd client
+$ npm i
+$ npm run dev
 ```
 
 The `vite.config.js` file has a config setting that maps the client
